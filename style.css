@@ -1,0 +1,10 @@
+body{
+    display: grid
+}
+
+.rubrik{
+    
+    background-color: lightgreen;
+    border: solid 2px black;
+    text-align: center;
+}
