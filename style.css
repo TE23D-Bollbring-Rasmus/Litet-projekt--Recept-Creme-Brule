@@ -1,11 +1,3 @@
-body {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* Kolumner: 1 för vänster, 3 för recept */
-    grid-template-rows: auto 300px 300px auto; /* Lägg till en extra rad för bild2 */
-    gap: 5px; /* Mellanrum mellan element */
-    margin: 0;
-    padding: 0;
-}
 
 /* Rubriken: Sträcker sig över hela sidans bredd */
 .rubrik {
@@ -61,6 +53,8 @@ main {
 
 /* Receptsektionen */
 .recept {
+    grid-column: 3/4;
+    grid-row: 1/3;
     background-color:  rgba(243, 188, 86, 0.868);
     border: solid 2px black;
     border-left: solid 1px black;
