@@ -80,3 +80,19 @@ main {
     line-height: 1.6; /* Ökat radavstånd för läsbarhet */
     font-size: 18px; /* Textstorlek på listpunkterna */
 }
+
+.recept {
+    flex: 1; /* Tar upp en del av main-sektionen */
+    background-color: rgba(243, 188, 86, 0.868);
+    border: solid 2px black;
+    text-align: center;
+    display: flex;
+    display: block;
+    margin-left: 5px;
+}
+
+/* Receptrubrik */
+.recept h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
