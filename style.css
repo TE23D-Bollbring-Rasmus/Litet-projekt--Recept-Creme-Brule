@@ -5,7 +5,6 @@ body {
     gap: 5px; /* Mellanrum mellan element */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full höjd */
 }
 
 /* Rubriken: Sträcker sig över hela sidans bredd */
@@ -27,8 +26,7 @@ body {
 main {
     display: grid; /* Använd grid istället för flexbox */
     grid-column: 1 / 3; /* Ligger i båda kolumnerna */
-    grid-template-columns: 1fr 1fr 3fr; /* 1 kolumn för ingredienser, 1 för bild, 3 för recept */
-    gap: 5px;
+    grid-template-columns: 1fr 1fr 2fr; /* 1 kolumn för ingredienser, 1 för bild, 3 för recept */
 }
 
 /* Ingredienser */
@@ -43,6 +41,7 @@ main {
 
 /* Bildcontainer */
 .bildingred {
+    border-right: solid 1px black;
     border: solid 2px black;
     display: flex; /* Använd flexbox för att placera bilden */
     align-items: stretch; /* Sträcker ut bilden vertikalt */
@@ -62,11 +61,12 @@ main {
 
 /* Receptsektionen */
 .recept {
-    background-color: rgba(200, 200, 255, 0.6); /* För att skilja den från de andra */
+    background-color:  rgba(243, 188, 86, 0.868);
     border: solid 2px black;
+    border-left: solid 1px black;
     padding: 10px;
     text-align: left;
-    height: 450px;
+    margin-right: 5px;
 }
 
 /* Receptrubrik */
@@ -77,15 +77,19 @@ main {
 
 /* Matbild (bild2) */
 .matbild {
+    display: grid;
+    grid-column: 1/3;
     border: solid 2px black;
+    border-top: 1px solid black;
     align-items: stretch;
     justify-content: stretch;
     height: 300px; /* Matcha med tidigare bilder */
-    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 0px;
 }
 
 .matbild img {
     width: 100%; /* Bilden fyller hela bredden */
-    height: 100%; /* Bilden fyller hela höjden */
+    height: 300px; /* Bilden fyller hela höjden */
     object-fit: cover; /* Anpassa proportioner */
 }
