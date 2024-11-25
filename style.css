@@ -89,3 +89,15 @@ main {
     height: 300px; /* Bilden fyller hela höjden */
     object-fit: cover; /* Anpassa proportioner */
 }
+
+.länkar{
+    border: 2px solid black;
+    grid-column: 3;
+    grid-row: 4/5;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Vertikal centrering */
+    justify-content: center; /* Horisontell centrering */
+}
