@@ -1,11 +1,11 @@
-/* Body: Grid-layout för hela sidan */
 body {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Första kolumnen för innehåll (ingredienser + bild), andra för recept */
-    grid-template-rows: auto 1fr; /* En rad för rubrik och en för huvudsektionen */
+    grid-template-columns: 1fr 3fr; /* Kolumner: 1 för vänster, 3 för recept */
+    grid-template-rows: auto 300px 300px auto; /* Lägg till en extra rad för bild2 */
+    gap: 5px; /* Mellanrum mellan element */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full höjd på sidan */
+    height: 100vh; /* Full höjd */
 }
 
 /* Rubriken: Sträcker sig över hela sidans bredd */
@@ -25,32 +25,32 @@ body {
 
 /* Main-sektionen: Innehåller ingredienser, bild och recept */
 main {
-    display: flex; /* Flexbox för att dela upp utrymmet mellan ingredienser, bild och recept */
+    display: grid; /* Använd grid istället för flexbox */
     grid-column: 1 / 3; /* Ligger i båda kolumnerna */
-    flex-direction: row; /* Lägger ingredienser, bild och recept horisontellt */
-    height: calc(100vh - 100px); /* Höjd minus rubrikens höjd */
+    grid-template-columns: 1fr 1fr 3fr; /* 1 kolumn för ingredienser, 1 för bild, 3 för recept */
+    gap: 5px;
 }
 
 /* Ingredienser */
 .ingred {
-    flex: 0.5; /* Tar upp en del av main-sektionen */
     background-color: rgba(243, 188, 86, 0.868);
     border: solid 2px black;
     text-align: center;
     display: block; /* Gör så att h2 och ul staplas vertikalt */
-    padding: 10px;
     margin-left: 5px;
+    height: 300px;
 }
 
 /* Bildcontainer */
 .bildingred {
-    flex: 0.5; /* Tar upp en del av main-sektionen */
     border: solid 2px black;
     display: flex; /* Använd flexbox för att placera bilden */
     align-items: stretch; /* Sträcker ut bilden vertikalt */
     justify-content: stretch; /* Sträcker ut bilden horisontellt */
     overflow: hidden; /* Förhindrar att något sticker utanför */
     padding: 0; /* Tar bort eventuell padding */
+    height: 300px;
+    margin-left: 0px;
 }
 
 /* Bild */
@@ -62,16 +62,30 @@ main {
 
 /* Receptsektionen */
 .recept {
-    flex: 1; /* Tar upp hela högerkolumnen */
     background-color: rgba(200, 200, 255, 0.6); /* För att skilja den från de andra */
     border: solid 2px black;
     padding: 10px;
     text-align: left;
-    margin-right: 5px;
+    height: 450px;
 }
 
 /* Receptrubrik */
 .recept h2 {
     font-size: 24px;
     font-weight: bold;
+}
+
+/* Matbild (bild2) */
+.matbild {
+    border: solid 2px black;
+    align-items: stretch;
+    justify-content: stretch;
+    height: 300px; /* Matcha med tidigare bilder */
+    margin-top: 5px;
+}
+
+.matbild img {
+    width: 100%; /* Bilden fyller hela bredden */
+    height: 100%; /* Bilden fyller hela höjden */
+    object-fit: cover; /* Anpassa proportioner */
 }
