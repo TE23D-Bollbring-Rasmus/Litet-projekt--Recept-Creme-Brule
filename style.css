@@ -1,34 +1,62 @@
-body{
+/* Body: Grid-layout för hela sidan */
+body {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 1fr 8fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Två kolumner: första för innehållet, andra för tom yta */
+    grid-template-rows: auto 1fr; /* Rader för rubriken och main-sektionen */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full höjd på sidan */
 }
 
-
-.ingredienser{
-    flex-direction: row;
-}
-.ingred{
-    height: 500px;
-    width: 200px;
-    display: grid;
-    grid-column: 1/2;
-    grid-row: 2/3;
-    background-color: rgba(243, 188, 86, 0.868);
-    border: solid 2px black;
-    text-align: center;
-}
-
-.bildingred{
-    display: grid;
-    grid-column:  2/3;
-    grid-row: 2/3;
-    border: solid 2px black;
-}
-.rubrik{
+/* Rubriken: Sträcker sig över hela sidans bredd */
+.rubrik {
     height: 100px;
-    grid-column: 1/4;
+    grid-column: 1 / 3; /* Täcker båda kolumnerna */
     background-color: lightgreen;
     border: solid 2px black;
     text-align: center;
+    display: flex;
+    align-items: center; /* Vertikal centrering */
+    justify-content: center; /* Horisontell centrering */
+}
+
+/* Main-sektionen: Halva bredden av sidan */
+main {
+    display: flex; /* Flexbox för att dela ytan mellan ingredienser och bild */
+    grid-column: 1 / 2; /* Ligger endast i den första kolumnen (halva sidan) */
+    flex-direction: row; /* Lägger ingredienser och bild horisontellt */
+    height: calc(100vh - 100px); /* Höjd minus rubrikens höjd */
+}
+
+/* Ingredienser */
+.ingred {
+    flex: 1; /* Tar upp hälften av main-sektionen */
+    background-color: rgba(243, 188, 86, 0.868);
+    border: solid 2px black;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* För innehållscentrering */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bildcontainer */
+.bildingred {
+    flex: 1; /* Tar upp hälften av main-sektionen */
+    border: solid 2px black;
+    display: flex; /* Flexbox för att centrera bilden */
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bild */
+.bildingred img {
+    max-width: 100%; /* Fyller containerns bredd */
+    max-height: 100%; /* Fyller containerns höjd */
+    object-fit: contain; /* Håller bildens proportioner */
+    margin: 0;
+    padding: 0;
 }
