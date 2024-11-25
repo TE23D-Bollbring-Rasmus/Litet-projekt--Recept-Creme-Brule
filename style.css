@@ -1,11 +1,10 @@
 /* Body: Grid-layout för hela sidan */
 body {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Två kolumner: första för innehållet, andra för tom yta */
+    grid-template-columns: 1fr 1fr; /* Två kolumner: första för innehållet, andra för recept */
     grid-template-rows: auto 1fr; /* Rader för rubriken och main-sektionen */
     margin: 0;
     padding: 0;
-    height: 100vh; /* Full höjd på sidan */
 }
 
 /* Rubriken: Sträcker sig över hela sidans bredd */
@@ -38,6 +37,7 @@ main {
     border: solid 2px black;
     text-align: center;
     display: flex;
+    display: block;
     margin-left: 5px;
 }
 
@@ -57,7 +57,26 @@ main {
     width: 100%; /* Fyller hela bredden av containern */
     height: 100%; /* Fyller hela höjden av containern */
     object-fit: cover; /* Gör att bilden fyller containern proportionellt */
-    display: block; /* Eliminera inline-mellanrum */
     margin: 0; /* Tar bort eventuell margin */
     padding: 0; /* Tar bort eventuell padding */
+}
+
+/* För Ingredienser */
+.ingred h2 {
+    margin-bottom: 10px; /* Litet avstånd mellan rubrik och lista */
+    font-size: 24px; /* Justera rubrikens storlek */
+    font-weight: bold; /* Fetstil på rubriken */
+}
+
+.ingred ul {
+    list-style-type: disc; /* Gör så att listan får punkter */
+    padding-left: 20px; /* Indrag för listan så att den inte ligger mot kanten */
+    margin-top: 0; /* Tar bort eventuell toppmarginal */
+    margin-bottom: 20px; /* Sätter lite avstånd efter listan om du vill ha mer utrymme */
+}
+
+.ingred li {
+    margin-bottom: 8px; /* Mellanrum mellan varje listpunkt */
+    line-height: 1.6; /* Ökat radavstånd för läsbarhet */
+    font-size: 18px; /* Textstorlek på listpunkterna */
 }
