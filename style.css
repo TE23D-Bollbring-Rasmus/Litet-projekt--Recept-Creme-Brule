@@ -1,4 +1,3 @@
-
 /* Rubriken: Sträcker sig över hela sidans bredd */
 .rubrik {
     margin-bottom: 5px;
@@ -90,14 +89,19 @@ main {
     object-fit: cover; /* Anpassa proportioner */
 }
 
-.länkar{
+.länkar {
+    margin-top: 5px;
     border: 2px solid black;
-    grid-column: 3;
     grid-row: 4/5;
-    height: 50px;
-    width: 300px;
+    grid-column: 2/4;
+    height: 35px;
+    width: 600px;
     text-align: center;
-    display: flex;
-    align-items: center; /* Vertikal centrering */
-    justify-content: center; /* Horisontell centrering */
+}
+
+a{
+    font-size: 12;
+      font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
